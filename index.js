@@ -1,7 +1,7 @@
 import express from 'express'
 
 const app = express()
-app.use = (express.json()) //needed for post requests
+app.use(express.json()) //needed for post requests
 
 let students = []
 
@@ -34,7 +34,7 @@ app.get("/train/:from-:to", (req, res) => {
 app.post("/students", (req, res) => {
     const newStudent = req.body
     students.push(newStudent)
-    res.status(201).send({ message: "Student added", success: true })
+    res.status(201).send({ message: `Created new student named ${newStudent.name}`, success: true })
 })
 
 app.listen(3000, () => {

@@ -29,11 +29,6 @@ app.get("/train/:from-:to", (req, res) => {
     res.send(`Loading rides from ${departing.from} to ${arriving.to}`)
 })
 
-app.get("/user/:username/birthday", (req, res) => {
-    const name = req.params
-    res.send(`HAPPY HAPPY BIRTHDAY ${name.username}!!! Hope you have an amazing day!`)
-})
-
 app.listen(3000, () => {
     console.log("Listening on http://localhost:3000...")
 })

@@ -31,6 +31,11 @@ app.get("/train/:from-:to", (req, res) => {
     res.send(`Loading rides from ${departing.from} to ${arriving.to}`)
 })
 
+app.get("/cars/:make/:model", (req, res) => {
+    const car = req.params
+    res.send(`I have a ${car.make} ${car.model}`)
+})
+
 app.post("/students", (req, res) => {
     const newStudent = req.body
     students.push(newStudent)
